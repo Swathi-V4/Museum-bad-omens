@@ -63,11 +63,3 @@ Suggested next improvements:
 ## Files
 - `index.html` — main museum site
 - `style.css` — styling and visual system
-
-## Submission
-Submit the GitHub repository link and make sure this README explains:
-- the project concept
-- the design style
-- the brand archetype
-- the persuasion method used
-- the orchestration process

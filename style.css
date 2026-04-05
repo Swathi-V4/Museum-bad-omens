@@ -22,7 +22,7 @@ position: relative;
 .page-background {
 position: fixed;
 inset: 0;
-background-image: url("images/folklore-forest.jpg");
+background-image: url("images/folklore-forest.png");
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -307,19 +307,19 @@ linear-gradient(180deg, rgba(9, 4, 18, 0.12) 0%, rgba(9, 4, 18, 0.45) 100%);
 }
 
 .image-13 {
-background-image: url("images/number-13.jpg");
+background-image: url("images/number-13.png");
 }
 
 .image-cat {
-background-image: url("images/black-cat.jpg");
+background-image: url("images/black-cat.png");
 }
 
 .image-nails {
-background-image: url("images/cutting-nails.jpg");
+background-image: url("images/cutting-nails.png");
 }
 
 .image-mirror {
-background-image: url("images/broken-mirror.jpg");
+background-image: url("images/broken-mirror.png");
 }
 
 /* CARD VARIANTS */

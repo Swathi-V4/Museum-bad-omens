@@ -13,21 +13,43 @@ scroll-behavior: smooth;
 body {
 font-family: "Cormorant Garamond", serif;
 color: #f3eadf;
-background:
-radial-gradient(circle at top center, rgba(82, 47, 125, 0.55), transparent 35%),
-radial-gradient(circle at center, rgba(45, 18, 74, 0.25), transparent 50%),
-linear-gradient(180deg, #12091f 0%, #190d2a 45%, #12091f 100%);
+background: #12091f;
 min-height: 100vh;
+position: relative;
+}
+
+/* BACKGROUND */
+.page-background {
+position: fixed;
+inset: 0;
+background-image: url("images/folklore-forest.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+transform: scale(1.03);
+filter: brightness(0.35) saturate(0.8) blur(1px);
+z-index: -2;
+}
+
+.page-overlay {
+position: fixed;
+inset: 0;
+background:
+linear-gradient(180deg, rgba(9, 4, 18, 0.72) 0%, rgba(18, 9, 31, 0.88) 100%),
+radial-gradient(circle at top center, rgba(94, 54, 145, 0.25), transparent 35%),
+radial-gradient(circle at center, rgba(45, 18, 74, 0.20), transparent 55%);
+z-index: -1;
 }
 
 /* TOP BAR */
 .topbar {
 border-bottom: 1px solid rgba(188, 141, 79, 0.45);
-background: rgba(15, 8, 28, 0.9);
+background: rgba(15, 8, 28, 0.88);
 position: sticky;
 top: 0;
 z-index: 100;
-backdrop-filter: blur(6px);
+backdrop-filter: blur(8px);
 }
 
 .topbar-inner {
@@ -72,28 +94,53 @@ transition: color 0.2s ease;
 color: #d2a85e;
 }
 
-/* HERO */
+/* LAYOUT */
+.hero,
+.insight,
+.gallery,
+.process {
+max-width: 1200px;
+margin: 0 auto;
+padding-left: 28px;
+padding-right: 28px;
+}
+
 .hero {
-padding: 72px 28px 36px;
+padding-top: 72px;
+padding-bottom: 28px;
+}
+
+.insight,
+.gallery,
+.process {
+padding-top: 40px;
+padding-bottom: 20px;
 }
 
 .hero-inner {
-max-width: 1200px;
-margin: 0 auto;
+max-width: 1000px;
 }
 
 .hero-card,
-.museum-card,
-.process-box {
-background: rgba(29, 13, 50, 0.88);
+.insight-box,
+.process-box,
+.flip-card-front,
+.flip-card-back {
 border: 1px solid rgba(188, 141, 79, 0.45);
-border-radius: 34px;
-box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+box-shadow: 0 18px 40px rgba(0, 0, 0, 0.30);
 }
 
+.hero-card,
+.insight-box,
+.process-box {
+background: rgba(29, 13, 50, 0.80);
+border-radius: 34px;
+}
+
+/* HERO */
 .hero-card {
 padding: 42px;
-max-width: 900px;
+max-width: 920px;
 }
 
 .hero-card h2 {
@@ -142,78 +189,154 @@ color: #f3eadf;
 background: transparent;
 }
 
-/* MAIN SECTIONS */
-.gallery,
-.process {
-max-width: 1200px;
-margin: 0 auto;
-padding: 40px 28px 20px;
-}
-
+/* HEADINGS */
 .section-heading h2 {
 font-size: 3rem;
 margin-bottom: 24px;
 }
 
-/* GALLERY */
-.card-grid {
-display: grid;
-grid-template-columns: repeat(2, minmax(0, 1fr));
-gap: 24px;
-}
-
-.museum-card {
-overflow: hidden;
-}
-
-.card-image {
-height: 210px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 4rem;
-border-bottom: 1px solid rgba(188, 141, 79, 0.35);
-}
-
-.placeholder {
-background:
-radial-gradient(circle at top, rgba(131, 85, 190, 0.55), transparent 45%),
-linear-gradient(180deg, #2a143f 0%, #180d2b 100%);
-color: #f0dfc7;
-}
-
-.card-content {
-padding: 24px;
-}
-
-.card-content h3 {
-font-size: 2rem;
-margin-bottom: 12px;
-}
-
-.card-content p {
-font-size: 1.12rem;
-line-height: 1.55;
-margin-bottom: 12px;
-}
-
-.card-content p:last-child {
-margin-bottom: 0;
-}
-
-/* PROCESS */
+/* INFO BOXES */
+.insight-box,
 .process-box {
 padding: 28px;
 }
 
+.insight-box p,
 .process-box p {
 font-size: 1.18rem;
 line-height: 1.65;
 margin-bottom: 14px;
 }
 
+.insight-box p:last-child,
 .process-box p:last-child {
 margin-bottom: 0;
+}
+
+/* GALLERY FLIP CARDS */
+.card-grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 28px;
+}
+
+.flip-card {
+background: transparent;
+perspective: 1200px;
+min-height: 460px;
+}
+
+.flip-card-inner {
+position: relative;
+width: 100%;
+height: 100%;
+min-height: 460px;
+transition: transform 0.8s ease;
+transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+position: absolute;
+inset: 0;
+border-radius: 28px;
+backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+overflow: hidden;
+}
+
+.flip-card-front {
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+padding: 24px;
+text-align: left;
+}
+
+.flip-card-front h3 {
+font-size: 2.1rem;
+margin-top: 18px;
+}
+
+.flip-card-back {
+transform: rotateY(180deg);
+padding: 28px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.flip-card-back h3 {
+font-size: 2rem;
+margin-bottom: 14px;
+}
+
+.flip-card-back p {
+font-size: 1.08rem;
+line-height: 1.55;
+margin-bottom: 12px;
+}
+
+.flip-card-back p:last-child {
+margin-bottom: 0;
+}
+
+/* FRONT IMAGES */
+.card-image {
+width: 100%;
+min-height: 270px;
+border-radius: 20px;
+border: 1px solid rgba(188, 141, 79, 0.28);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+position: relative;
+overflow: hidden;
+}
+
+.card-image::after {
+content: "";
+position: absolute;
+inset: 0;
+background:
+linear-gradient(180deg, rgba(9, 4, 18, 0.12) 0%, rgba(9, 4, 18, 0.45) 100%);
+}
+
+.image-13 {
+background-image: url("images/number-13.jpg");
+}
+
+.image-cat {
+background-image: url("images/black-cat.jpg");
+}
+
+.image-nails {
+background-image: url("images/cutting-nails.jpg");
+}
+
+.image-mirror {
+background-image: url("images/broken-mirror.jpg");
+}
+
+/* CARD VARIANTS */
+.card-variant-1 {
+background: linear-gradient(135deg, rgba(42, 20, 63, 0.95), rgba(26, 13, 43, 0.97));
+}
+
+.card-variant-2 {
+background: linear-gradient(135deg, rgba(47, 26, 77, 0.95), rgba(20, 10, 36, 0.97));
+}
+
+.card-variant-3 {
+background: linear-gradient(135deg, rgba(36, 18, 56, 0.95), rgba(18, 9, 31, 0.97));
+}
+
+.card-variant-4 {
+background: linear-gradient(135deg, rgba(49, 26, 79, 0.95), rgba(26, 13, 43, 0.97));
 }
 
 /* FOOTER */
@@ -246,8 +369,10 @@ align-items: flex-start;
 
 @media (max-width: 640px) {
 .hero-card,
-.museum-card,
-.process-box {
+.insight-box,
+.process-box,
+.flip-card-front,
+.flip-card-back {
 border-radius: 24px;
 }
 
@@ -260,8 +385,9 @@ font-size: 2.6rem;
 }
 
 .hero-text,
-.card-content p,
-.process-box p {
+.insight-box p,
+.process-box p,
+.flip-card-back p {
 font-size: 1.05rem;
 }
 
@@ -275,5 +401,19 @@ font-size: 2.3rem;
 
 .main-nav {
 gap: 16px;
+}
+
+.flip-card,
+.flip-card-inner {
+min-height: 520px;
+}
+
+.flip-card-front h3,
+.flip-card-back h3 {
+font-size: 1.8rem;
+}
+
+.card-image {
+min-height: 210px;
 }
 }

@@ -31,7 +31,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   transform: scale(1.08);
-  filter: brightness(0.35) saturate(0.8) blur(1px);
+  filter: brightness(0.35) saturate(0.85) blur(1px);
   z-index: -4;
 }
 
@@ -92,15 +92,15 @@ body {
   }
 }
 
-/* SECTION ANIMATION */
+/* SUBTLE SECTION REVEAL */
 section {
-  animation: fadeUp 1s ease both;
+  animation: fadeUp 0.9s ease both;
 }
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -222,6 +222,28 @@ section {
   pointer-events: none;
 }
 
+.hero-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.05) 45%, transparent 100%);
+  transform: translateX(-100%);
+  animation: heroShimmer 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes heroShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  20% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 .hero-card > * {
   position: relative;
   z-index: 2;
@@ -238,6 +260,10 @@ section {
   font-size: 1.2rem;
   line-height: 1.6;
   max-width: 90%;
+}
+
+.secondary-text {
+  margin-top: 14px;
 }
 
 .hero-buttons {
@@ -299,7 +325,7 @@ section {
   margin-bottom: 0;
 }
 
-/* GALLERY FLIP CARDS */
+/* GALLERY */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -309,7 +335,7 @@ section {
 .flip-card {
   background: transparent;
   perspective: 1200px;
-  min-height: 460px;
+  min-height: 480px;
   transition: transform 0.25s ease;
 }
 
@@ -321,7 +347,7 @@ section {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 460px;
+  min-height: 480px;
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
 }
@@ -384,7 +410,7 @@ section {
 
 .flip-card-front h3 {
   font-size: 2.1rem;
-  margin-top: 18px;
+  margin-top: 10px;
   position: relative;
   z-index: 2;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
@@ -417,7 +443,22 @@ section {
   margin-bottom: 0;
 }
 
-/* FRONT IMAGES */
+.card-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f6deaf;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(218, 184, 122, 0.28);
+  padding: 7px 10px;
+  border-radius: 999px;
+  position: relative;
+  z-index: 2;
+}
+
+/* CARD IMAGES */
 .card-image {
   width: 100%;
   min-height: 270px;
@@ -469,6 +510,55 @@ section {
   background-image: url("images/broken-mirror.png");
 }
 
+.image-salt {
+  background-image: url("images/spilled-salt.png");
+}
+
+.image-ladder {
+  background-image: url("images/ladder.png");
+}
+
+.image-umbrella {
+  background-image: url("images/umbrella-indoors.png");
+}
+
+.image-eye {
+  background-image: url("images/evil-eye.png");
+}
+
+/* SUBTLE CARD EFFECTS */
+.cat-card .card-image {
+  animation: catGlow 4s ease-in-out infinite;
+}
+
+@keyframes catGlow {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 0 1px rgba(230, 208, 167, 0.14),
+      0 12px 24px rgba(0, 0, 0, 0.22);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 0 1px rgba(230, 208, 167, 0.14),
+      0 12px 24px rgba(0, 0, 0, 0.22),
+      0 0 24px rgba(185, 147, 230, 0.25);
+  }
+}
+
+.mirror-card:hover .card-image {
+  animation: mirrorShake 0.35s ease-in-out;
+}
+
+@keyframes mirrorShake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+  100% { transform: translateX(0); }
+}
+
 /* CARD VARIANTS */
 .card-variant-1 {
   background: linear-gradient(135deg, rgba(42, 20, 63, 0.95), rgba(26, 13, 43, 0.97));
@@ -484,6 +574,22 @@ section {
 
 .card-variant-4 {
   background: linear-gradient(135deg, rgba(49, 26, 79, 0.95), rgba(26, 13, 43, 0.97));
+}
+
+.card-variant-5 {
+  background: linear-gradient(135deg, rgba(59, 28, 58, 0.95), rgba(28, 11, 37, 0.97));
+}
+
+.card-variant-6 {
+  background: linear-gradient(135deg, rgba(31, 28, 64, 0.95), rgba(15, 10, 33, 0.97));
+}
+
+.card-variant-7 {
+  background: linear-gradient(135deg, rgba(56, 24, 70, 0.95), rgba(25, 10, 36, 0.97));
+}
+
+.card-variant-8 {
+  background: linear-gradient(135deg, rgba(34, 34, 79, 0.95), rgba(16, 12, 40, 0.97));
 }
 
 /* FOOTER */
@@ -553,7 +659,7 @@ section {
 
   .flip-card,
   .flip-card-inner {
-    min-height: 520px;
+    min-height: 540px;
   }
 
   .flip-card-front h3,
@@ -570,6 +676,9 @@ section {
   .fog-one,
   .fog-two,
   section,
+  .hero-card::after,
+  .cat-card .card-image,
+  .mirror-card:hover .card-image,
   .flip-card,
   .flip-card-inner,
   .btn {

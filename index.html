@@ -72,7 +72,7 @@
         <div class="risk-response" id="risk-response" aria-live="polite">
           <p class="risk-response-title" id="risk-response-title"></p>
           <p class="risk-response-text" id="risk-response-text"></p>
-          <a href="#gallery" class="risk-link" id="risk-link">Continue into the collection</a>
+          <a href="#gallery" class="risk-link">Continue into the collection</a>
         </div>
       </div>
     </section>
@@ -270,30 +270,43 @@
   </main>
 
   <script>
-    const walkUnderBtn = document.getElementById("walk-under-btn");
-    const goAroundBtn = document.getElementById("go-around-btn");
-    const responseBox = document.getElementById("risk-response");
-    const responseTitle = document.getElementById("risk-response-title");
-    const responseText = document.getElementById("risk-response-text");
+    document.addEventListener("DOMContentLoaded", function () {
+      const walkUnderBtn = document.getElementById("walk-under-btn");
+      const goAroundBtn = document.getElementById("go-around-btn");
+      const responseBox = document.getElementById("risk-response");
+      const responseTitle = document.getElementById("risk-response-title");
+      const responseText = document.getElementById("risk-response-text");
 
-    function setResponse(choice) {
-      responseBox.classList.add("show");
-      walkUnderBtn.classList.remove("selected");
-      goAroundBtn.classList.remove("selected");
-
-      if (choice === "under") {
-        walkUnderBtn.classList.add("selected");
-        responseTitle.textContent = "You chose logic over ritual.";
-        responseText.textContent = "Even so, many people still hesitate. Superstition often survives not because it is proven, but because it makes risk feel personal.";
-      } else {
-        goAroundBtn.classList.add("selected");
-        responseTitle.textContent = "You chose caution over chance.";
-        responseText.textContent = "That small hesitation is part of what this exhibit explores: how fear, symbolism, and habit shape behavior even when we call ourselves rational.";
+      if (!walkUnderBtn || !goAroundBtn || !responseBox || !responseTitle || !responseText) {
+        return;
       }
-    }
 
-    walkUnderBtn.addEventListener("click", () => setResponse("under"));
-    goAroundBtn.addEventListener("click", () => setResponse("around"));
+      function setResponse(choice) {
+        responseBox.classList.add("show");
+        walkUnderBtn.classList.remove("selected");
+        goAroundBtn.classList.remove("selected");
+
+        if (choice === "under") {
+          walkUnderBtn.classList.add("selected");
+          responseTitle.textContent = "You chose logic over ritual.";
+          responseText.textContent =
+            "Even so, many people still hesitate. Superstition often survives not because it is proven, but because it makes risk feel personal.";
+        } else {
+          goAroundBtn.classList.add("selected");
+          responseTitle.textContent = "You chose caution over chance.";
+          responseText.textContent =
+            "That small hesitation is part of what this exhibit explores: how fear, symbolism, and habit shape behavior even when we call ourselves rational.";
+        }
+      }
+
+      walkUnderBtn.addEventListener("click", function () {
+        setResponse("under");
+      });
+
+      goAroundBtn.addEventListener("click", function () {
+        setResponse("around");
+      });
+    });
   </script>
 
 </body>

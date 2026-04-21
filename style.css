@@ -368,6 +368,59 @@ section {
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+.risk-btn.selected {
+  background: linear-gradient(90deg, rgba(216, 178, 122, 0.25) 0%, rgba(183, 147, 230, 0.22) 100%);
+  border-color: rgba(216, 178, 122, 0.75);
+  box-shadow: 0 0 0 1px rgba(216, 178, 122, 0.35), 0 12px 24px rgba(0,0,0,0.22);
+  transform: translateY(-1px);
+}
+
+.risk-response {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(8px);
+  transition: max-height 0.45s ease, opacity 0.35s ease, transform 0.35s ease, margin-top 0.35s ease;
+  margin-top: 0;
+}
+
+.risk-response.show {
+  max-height: 220px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 24px;
+}
+
+.risk-response-title {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #f3eadf;
+  margin-bottom: 10px;
+}
+
+.risk-response-text {
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: #e9decd;
+  max-width: 700px;
+  margin: 0 auto 18px;
+}
+
+.risk-link {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  color: #f6deaf;
+  border-bottom: 1px solid rgba(246, 222, 175, 0.5);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.risk-link:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
 /* HEADINGS */
 .section-heading h2 {
   font-size: 3rem;
@@ -745,7 +798,8 @@ section {
   .insight-box p,
   .process-box p,
   .flip-card-back p,
-  .risk-question {
+  .risk-question,
+  .risk-response-text {
     font-size: 1.02rem;
     max-width: 100%;
   }
@@ -793,7 +847,8 @@ section {
   .flip-card,
   .flip-card-inner,
   .btn,
-  .risk-btn {
+  .risk-btn,
+  .risk-response {
     animation: none;
     transition: none;
   }

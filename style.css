@@ -106,10 +106,10 @@ section {
   }
 }
 
-/* TOP BAR */
+/* TOP BAR CLEANED */
 .topbar {
-  border-bottom: 1px solid rgba(188, 141, 79, 0.45);
-  background: rgba(15, 8, 28, 0.88);
+  border-bottom: 1px solid rgba(188, 141, 79, 0.35);
+  background: rgba(10, 4, 20, 0.92);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -117,23 +117,13 @@ section {
 }
 
 .topbar-inner {
-  max-width: 1400px;
+  max-width: 1450px;
   margin: 0 auto;
-  padding: 18px 28px;
+  padding: 14px 34px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 32px;
-}
-
-.eyebrow {
-  font-family: "Inter", sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #d2a85e;
-  margin-bottom: 8px;
-  font-weight: 500;
+  gap: 30px;
 }
 
 .brand-block {
@@ -141,19 +131,29 @@ section {
 }
 
 .brand-block h1 {
-  font-size: 4rem;
+  font-size: 3.4rem;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 2px;
   white-space: nowrap;
-  font-weight: 700;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+  font-weight: 600;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.3);
+}
+
+.eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  color: #d2a85e;
+  margin-bottom: 6px;
+  font-weight: 400;
 }
 
 .main-nav {
   display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
+  gap: 34px;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
 }
@@ -162,15 +162,18 @@ section {
   font-family: "Inter", sans-serif;
   color: #f3eadf;
   text-decoration: none;
-  font-size: 1rem;
-  letter-spacing: 1px;
+  font-size: 0.86rem;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0.88;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .main-nav a:hover {
   color: #d2a85e;
+  opacity: 1;
 }
 
 /* LAYOUT */
@@ -745,7 +748,15 @@ section {
   }
 
   .brand-block h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
+  }
+
+  .main-nav {
+    gap: 22px;
+  }
+
+  .main-nav a {
+    font-size: 0.78rem;
   }
 }
 
@@ -756,20 +767,28 @@ section {
 
   .topbar-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 14px;
   }
 
   .brand-block h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     white-space: normal;
+    text-align: center;
+  }
+
+  .brand-block {
+    text-align: center;
+  }
+
+  .main-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
   }
 
   .hero-card h2 {
     font-size: 3.4rem;
-  }
-
-  .main-nav {
-    justify-content: flex-start;
   }
 }
 
@@ -814,7 +833,12 @@ section {
   }
 
   .main-nav {
-    gap: 16px;
+    gap: 14px;
+  }
+
+  .main-nav a {
+    font-size: 0.72rem;
+    letter-spacing: 1.2px;
   }
 
   .flip-card,

@@ -59,20 +59,26 @@
         <p class="eyebrow">A MOMENT OF DECISION</p>
         <h2 id="risk-title">Would you risk it?</h2>
 
-        <p class="risk-question">
-          You’re walking down a quiet street. A ladder blocks your path.
-          No one is watching. Do you walk under it?
+        <p class="risk-question" id="risk-question">
+          A ladder blocks your path on a quiet street. No one is watching. Do you walk under it?
         </p>
 
+        <div class="omen-meter">
+          <span>Omen Level</span>
+          <div class="meter-track">
+            <div class="meter-fill" id="meter-fill"></div>
+          </div>
+        </div>
+
         <div class="risk-options">
-          <button class="risk-btn" id="walk-under-btn" type="button">Walk under it</button>
-          <button class="risk-btn" id="go-around-btn" type="button">Go around</button>
+          <button class="risk-btn" id="risky-btn" type="button">Risk it</button>
+          <button class="risk-btn" id="safe-btn" type="button">Play it safe</button>
         </div>
 
         <div class="risk-response" id="risk-response" aria-live="polite">
           <p class="risk-response-title" id="risk-response-title"></p>
           <p class="risk-response-text" id="risk-response-text"></p>
-          <a href="#gallery" class="risk-link">Continue into the collection</a>
+          <button class="risk-link-btn" id="next-omen-btn" type="button">Try another omen</button>
         </div>
       </div>
     </section>
@@ -234,15 +240,12 @@
         <p>
           Superstitions are often dismissed as irrational, but they reveal something deeper about human behavior. In moments of uncertainty, people naturally look for patterns, causes, and rituals that make the world feel more predictable.
         </p>
-
         <p>
           These beliefs persist not because they are scientifically proven, but because they are emotionally persuasive. They can reduce anxiety, create a sense of control, and connect people to family traditions, folklore, and cultural memory.
         </p>
-
         <p>
           To study superstition is to study the human mind itself: its fears, its habits, its stories, and its tendency to give meaning to randomness.
         </p>
-
         <p>
           This also connects to ideas such as pattern recognition bias, confirmation bias, and the tendency to remember events that seem to confirm what we already fear.
         </p>
@@ -271,41 +274,93 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const walkUnderBtn = document.getElementById("walk-under-btn");
-      const goAroundBtn = document.getElementById("go-around-btn");
+      const scenarios = [
+        {
+          question: "A ladder blocks your path on a quiet street. No one is watching. Do you walk under it?",
+          risky: "You walked under the ladder.",
+          safe: "You went around the ladder.",
+          riskyText: "Bold choice. You ignored the omen, but the superstition still worked on you for a second.",
+          safeText: "You chose caution. Sometimes superstition survives because avoiding it costs almost nothing.",
+          level: "72%"
+        },
+        {
+          question: "A black cat crosses in front of you before an important day. Do you keep walking?",
+          risky: "You kept walking.",
+          safe: "You paused and changed direction.",
+          riskyText: "You resisted the story attached to the symbol. Still, the cat probably made the moment feel charged.",
+          safeText: "You followed the old warning. Even tiny rituals can make uncertainty feel easier to control.",
+          level: "64%"
+        },
+        {
+          question: "You spill salt across the table. Do you ignore it or throw some over your shoulder?",
+          risky: "You ignored the salt.",
+          safe: "You threw salt over your shoulder.",
+          riskyText: "You broke the ritual. The mistake stayed ordinary instead of becoming mystical.",
+          safeText: "You completed the ritual. A small action turned accident into correction.",
+          level: "58%"
+        },
+        {
+          question: "You find an umbrella by the door on a rainy day. Do you open it inside to test it?",
+          risky: "You opened it indoors.",
+          safe: "You waited until you were outside.",
+          riskyText: "You challenged the taboo. The real danger may have been poking someone nearby.",
+          safeText: "You obeyed the rule. Practical warnings often become supernatural over time.",
+          level: "49%"
+        }
+      ];
+
+      const question = document.getElementById("risk-question");
+      const riskyBtn = document.getElementById("risky-btn");
+      const safeBtn = document.getElementById("safe-btn");
       const responseBox = document.getElementById("risk-response");
       const responseTitle = document.getElementById("risk-response-title");
       const responseText = document.getElementById("risk-response-text");
+      const nextBtn = document.getElementById("next-omen-btn");
+      const meterFill = document.getElementById("meter-fill");
 
-      if (!walkUnderBtn || !goAroundBtn || !responseBox || !responseTitle || !responseText) {
-        return;
+      let current = 0;
+
+      function loadScenario() {
+        const item = scenarios[current];
+        question.textContent = item.question;
+        meterFill.style.width = item.level;
+        responseBox.classList.remove("show");
+        riskyBtn.classList.remove("selected");
+        safeBtn.classList.remove("selected");
       }
 
-      function setResponse(choice) {
+      function choose(type) {
+        const item = scenarios[current];
         responseBox.classList.add("show");
-        walkUnderBtn.classList.remove("selected");
-        goAroundBtn.classList.remove("selected");
 
-        if (choice === "under") {
-          walkUnderBtn.classList.add("selected");
-          responseTitle.textContent = "You chose logic over ritual.";
-          responseText.textContent =
-            "Even so, many people still hesitate. Superstition often survives not because it is proven, but because it makes risk feel personal.";
+        riskyBtn.classList.remove("selected");
+        safeBtn.classList.remove("selected");
+
+        if (type === "risky") {
+          riskyBtn.classList.add("selected");
+          responseTitle.textContent = item.risky;
+          responseText.textContent = item.riskyText;
         } else {
-          goAroundBtn.classList.add("selected");
-          responseTitle.textContent = "You chose caution over chance.";
-          responseText.textContent =
-            "That small hesitation is part of what this exhibit explores: how fear, symbolism, and habit shape behavior even when we call ourselves rational.";
+          safeBtn.classList.add("selected");
+          responseTitle.textContent = item.safe;
+          responseText.textContent = item.safeText;
         }
       }
 
-      walkUnderBtn.addEventListener("click", function () {
-        setResponse("under");
+      riskyBtn.addEventListener("click", function () {
+        choose("risky");
       });
 
-      goAroundBtn.addEventListener("click", function () {
-        setResponse("around");
+      safeBtn.addEventListener("click", function () {
+        choose("safe");
       });
+
+      nextBtn.addEventListener("click", function () {
+        current = (current + 1) % scenarios.length;
+        loadScenario();
+      });
+
+      loadScenario();
     });
   </script>
 

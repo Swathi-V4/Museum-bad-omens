@@ -329,22 +329,50 @@ section {
 .risk-inner {
   background: rgba(29, 13, 50, 0.6);
   border: 1px solid rgba(188, 141, 79, 0.25);
-  padding: 40px;
+  padding: 44px;
   text-align: center;
 }
 
 .risk-inner h2 {
-  font-size: 2.6rem;
+  font-size: 2.9rem;
   margin-bottom: 16px;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
 .risk-question {
-  font-size: 1.2rem;
+  font-size: 1.22rem;
   line-height: 1.6;
   color: #e9decd;
-  margin-bottom: 28px;
+  margin: 0 auto 24px;
+  max-width: 850px;
+}
+
+.omen-meter {
+  max-width: 420px;
+  margin: 0 auto 26px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #d8b27a;
+}
+
+.meter-track {
+  height: 9px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(188, 141, 79, 0.25);
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d8b27a, #b793e6);
+  transition: width 0.5s ease;
 }
 
 .risk-options {
@@ -388,7 +416,7 @@ section {
 }
 
 .risk-response.show {
-  max-height: 220px;
+  max-height: 260px;
   opacity: 1;
   transform: translateY(0);
   margin-top: 24px;
@@ -409,17 +437,19 @@ section {
   margin: 0 auto 18px;
 }
 
-.risk-link {
-  display: inline-block;
+.risk-link-btn {
   font-family: "Inter", sans-serif;
-  text-decoration: none;
+  border: none;
+  background: transparent;
   color: #f6deaf;
   border-bottom: 1px solid rgba(246, 222, 175, 0.5);
-  padding-bottom: 2px;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  padding-bottom: 3px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
 }
 
-.risk-link:hover {
+.risk-link-btn:hover {
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.7);
 }
@@ -872,7 +902,8 @@ section {
   .flip-card-inner,
   .btn,
   .risk-btn,
-  .risk-response {
+  .risk-response,
+  .meter-fill {
     animation: none;
     transition: none;
   }

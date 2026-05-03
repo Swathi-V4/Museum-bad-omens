@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cabinet of Omens</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
+<body>
   <div class="page-background"></div>
   <div class="page-overlay"></div>
   <div class="fog-layer fog-one"></div>
@@ -59,12 +59,13 @@
         <p class="eyebrow">A MOMENT OF DECISION</p>
         <h2 id="risk-title">Would you risk it?</h2>
 
-        <p class="risk-question" id="risk-question">
-          A ladder blocks your path on a quiet street. No one is watching. Do you walk under it?
-        </p>
+        <p class="risk-question" id="risk-question"></p>
 
         <div class="omen-meter">
-          <span>Omen Level</span>
+          <div class="omen-meter-top">
+            <span>Omen Level</span>
+            <span id="omen-percent">0%</span>
+          </div>
           <div class="meter-track">
             <div class="meter-fill" id="meter-fill"></div>
           </div>
@@ -90,7 +91,6 @@
       </div>
 
       <div class="card-grid">
-
         <article class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front card-variant-1">
@@ -101,9 +101,9 @@
             </div>
             <div class="flip-card-back card-variant-1">
               <h3>The Number 13</h3>
-              <p><strong>History:</strong> Fear of 13, known as triskaidekaphobia, is often linked to Western religious and mythological traditions in which the number signals disorder, imbalance, or betrayal.</p>
-              <p><strong>Psychology:</strong> This reflects pattern-seeking behavior and the tendency to remember negative events more strongly when they confirm an existing fear.</p>
-              <p><strong>Why It Persists:</strong> The number is still avoided in buildings, hotels, and travel settings, which helps the belief feel culturally reinforced and real.</p>
+              <p><strong>History:</strong> Fear of 13, known as triskaidekaphobia, is often linked to Western religious and mythological traditions.</p>
+              <p><strong>Psychology:</strong> This reflects pattern-seeking behavior and the tendency to remember negative events more strongly.</p>
+              <p><strong>Why It Persists:</strong> The number is still avoided in buildings, hotels, and travel settings.</p>
             </div>
           </div>
         </article>
@@ -118,9 +118,9 @@
             </div>
             <div class="flip-card-back card-variant-2">
               <h3>Black Cats</h3>
-              <p><strong>History:</strong> In parts of medieval Europe, black cats became associated with witchcraft, night, and dark omens, turning an ordinary animal into a symbol of danger.</p>
-              <p><strong>Psychology:</strong> This shows how social storytelling can attach fear to visual symbols and create strong emotional associations that outlast their original context.</p>
-              <p><strong>Why It Persists:</strong> Because black cats are visually striking and repeatedly used in folklore and media, the superstition stays recognizable across generations.</p>
+              <p><strong>History:</strong> In parts of medieval Europe, black cats became associated with witchcraft, night, and dark omens.</p>
+              <p><strong>Psychology:</strong> Social storytelling can attach fear to visual symbols.</p>
+              <p><strong>Why It Persists:</strong> Black cats remain recognizable in folklore and media.</p>
             </div>
           </div>
         </article>
@@ -135,9 +135,9 @@
             </div>
             <div class="flip-card-back card-variant-3">
               <h3>Cutting Nails at Night</h3>
-              <p><strong>History:</strong> In some Asian cultures, cutting nails after dark was believed to invite bad luck or danger, possibly because poor lighting once made the act risky or impractical.</p>
-              <p><strong>Psychology:</strong> Practical warnings can slowly become symbolic beliefs when they are repeated through family instruction and tied to imagined consequences.</p>
-              <p><strong>Why It Persists:</strong> The superstition survives because it blends daily routine with tradition, making it easy to pass down as both advice and cautionary belief.</p>
+              <p><strong>History:</strong> In some Asian cultures, cutting nails after dark was believed to invite bad luck.</p>
+              <p><strong>Psychology:</strong> Practical warnings can become symbolic beliefs.</p>
+              <p><strong>Why It Persists:</strong> It blends daily routine with family tradition.</p>
             </div>
           </div>
         </article>
@@ -152,9 +152,9 @@
             </div>
             <div class="flip-card-back card-variant-4">
               <h3>Breaking a Mirror</h3>
-              <p><strong>History:</strong> Ancient cultures often viewed mirrors as spiritually significant objects connected to identity and the soul, so breaking one was thought to damage more than glass.</p>
-              <p><strong>Psychology:</strong> Humans project emotional meaning onto personal objects, especially ones tied to reflection and self-image, which makes the superstition feel intimate and unsettling.</p>
-              <p><strong>Why It Persists:</strong> A shattered mirror is dramatic, memorable, and visually symbolic, making the story easy to repeat and hard to forget.</p>
+              <p><strong>History:</strong> Mirrors were once viewed as spiritually significant objects connected to identity and the soul.</p>
+              <p><strong>Psychology:</strong> Humans project meaning onto personal objects.</p>
+              <p><strong>Why It Persists:</strong> A shattered mirror is dramatic and memorable.</p>
             </div>
           </div>
         </article>
@@ -169,9 +169,9 @@
             </div>
             <div class="flip-card-back card-variant-5">
               <h3>Spilling Salt</h3>
-              <p><strong>History:</strong> Salt was once expensive and symbolically valuable, so spilling it could represent waste, misfortune, or the disruption of order.</p>
-              <p><strong>Psychology:</strong> People often give extra meaning to accidents when the object involved is already culturally marked as important.</p>
-              <p><strong>Why It Persists:</strong> The ritual of throwing salt over the shoulder makes the superstition memorable because it turns a mistake into a dramatic act of correction.</p>
+              <p><strong>History:</strong> Salt was once expensive and symbolically valuable.</p>
+              <p><strong>Psychology:</strong> People give extra meaning to accidents involving important objects.</p>
+              <p><strong>Why It Persists:</strong> The ritual turns a mistake into correction.</p>
             </div>
           </div>
         </article>
@@ -186,9 +186,9 @@
             </div>
             <div class="flip-card-back card-variant-6">
               <h3>Walking Under a Ladder</h3>
-              <p><strong>History:</strong> Ladders were once associated with sacred triangular forms and with spaces of labor, danger, and punishment, making passage beneath them feel risky or disrespectful.</p>
-              <p><strong>Psychology:</strong> This superstition may survive because it combines symbolic danger with a practical truth: walking under a ladder can genuinely be unsafe.</p>
-              <p><strong>Why It Persists:</strong> Beliefs endure more easily when they are reinforced by both cultural storytelling and common-sense caution.</p>
+              <p><strong>History:</strong> Ladders were linked to sacred triangular forms and dangerous spaces.</p>
+              <p><strong>Psychology:</strong> This belief combines symbolic danger with real physical risk.</p>
+              <p><strong>Why It Persists:</strong> It is reinforced by both storytelling and caution.</p>
             </div>
           </div>
         </article>
@@ -203,9 +203,9 @@
             </div>
             <div class="flip-card-back card-variant-7">
               <h3>Opening an Umbrella Indoors</h3>
-              <p><strong>History:</strong> This belief may have developed from earlier concerns about damaging indoor spaces or accidentally hurting someone with older umbrella designs.</p>
-              <p><strong>Psychology:</strong> Everyday rules often become mystical when they are repeated without explanation and attached to a warning of bad luck.</p>
-              <p><strong>Why It Persists:</strong> It remains vivid because it turns an ordinary object into something briefly dramatic and forbidden.</p>
+              <p><strong>History:</strong> This belief may have come from concerns about damaging indoor spaces or hurting someone.</p>
+              <p><strong>Psychology:</strong> Everyday rules can become mystical when repeated without explanation.</p>
+              <p><strong>Why It Persists:</strong> It turns an ordinary object into something forbidden.</p>
             </div>
           </div>
         </article>
@@ -220,13 +220,12 @@
             </div>
             <div class="flip-card-back card-variant-8">
               <h3>The Evil Eye</h3>
-              <p><strong>History:</strong> Across many cultures, envy and attention were believed to carry harmful force, especially toward beauty, success, or vulnerability.</p>
-              <p><strong>Psychology:</strong> This belief reflects social anxiety about jealousy, competition, and the unseen consequences of being watched too closely.</p>
-              <p><strong>Why It Persists:</strong> Protective charms and repeated family traditions help the superstition remain visible, wearable, and emotionally powerful.</p>
+              <p><strong>History:</strong> Envy and attention were believed to carry harmful force.</p>
+              <p><strong>Psychology:</strong> This reflects social anxiety about jealousy and being watched.</p>
+              <p><strong>Why It Persists:</strong> Protective charms keep the belief visible and emotional.</p>
             </div>
           </div>
         </article>
-
       </div>
     </section>
 
@@ -237,18 +236,10 @@
       </div>
 
       <div class="insight-box">
-        <p>
-          Superstitions are often dismissed as irrational, but they reveal something deeper about human behavior. In moments of uncertainty, people naturally look for patterns, causes, and rituals that make the world feel more predictable.
-        </p>
-        <p>
-          These beliefs persist not because they are scientifically proven, but because they are emotionally persuasive. They can reduce anxiety, create a sense of control, and connect people to family traditions, folklore, and cultural memory.
-        </p>
-        <p>
-          To study superstition is to study the human mind itself: its fears, its habits, its stories, and its tendency to give meaning to randomness.
-        </p>
-        <p>
-          This also connects to ideas such as pattern recognition bias, confirmation bias, and the tendency to remember events that seem to confirm what we already fear.
-        </p>
+        <p>Superstitions are often dismissed as irrational, but they reveal something deeper about human behavior. In moments of uncertainty, people naturally look for patterns, causes, and rituals that make the world feel more predictable.</p>
+        <p>These beliefs persist not because they are scientifically proven, but because they are emotionally persuasive. They can reduce anxiety, create a sense of control, and connect people to family traditions, folklore, and cultural memory.</p>
+        <p>To study superstition is to study the human mind itself: its fears, its habits, its stories, and its tendency to give meaning to randomness.</p>
+        <p>This also connects to ideas such as pattern recognition bias, confirmation bias, and the tendency to remember events that seem to confirm what we already fear.</p>
       </div>
     </section>
 
@@ -259,15 +250,9 @@
       </div>
 
       <div class="process-box">
-        <p>
-          This digital museum was designed as a focused exhibition using a Victorian fairy painting aesthetic: jewel tones, dark contrast, ornate framing, and an atmosphere of mystery. The goal was to create an experience that feels immersive rather than purely informational.
-        </p>
-        <p>
-          Each artifact is presented like a museum object. The front of each card introduces the superstition visually, while the reverse reveals deeper interpretation through historical and psychological context. This structure invites viewers to move from appearance to meaning, much like reading a museum label after first seeing an object.
-        </p>
-        <p>
-          The exhibit uses curation as a design strategy, treating superstition not as random folklore but as evidence of how humans respond to fear, uncertainty, and the need for control. The result is meant to feel like an archive of beliefs: eerie, beautiful, and revealing.
-        </p>
+        <p>This digital museum was designed as a focused exhibition using a Victorian fairy painting aesthetic: jewel tones, dark contrast, ornate framing, and an atmosphere of mystery.</p>
+        <p>Each artifact is presented like a museum object. The front introduces the superstition visually, while the reverse reveals historical and psychological context.</p>
+        <p>The exhibit treats superstition not as random folklore but as evidence of how humans respond to fear, uncertainty, and the need for control.</p>
       </div>
     </section>
   </main>
@@ -281,7 +266,7 @@
           safe: "You went around the ladder.",
           riskyText: "Bold choice. You ignored the omen, but the superstition still worked on you for a second.",
           safeText: "You chose caution. Sometimes superstition survives because avoiding it costs almost nothing.",
-          level: "72%"
+          level: 72
         },
         {
           question: "A black cat crosses in front of you before an important day. Do you keep walking?",
@@ -289,7 +274,7 @@
           safe: "You paused and changed direction.",
           riskyText: "You resisted the story attached to the symbol. Still, the cat probably made the moment feel charged.",
           safeText: "You followed the old warning. Even tiny rituals can make uncertainty feel easier to control.",
-          level: "64%"
+          level: 64
         },
         {
           question: "You spill salt across the table. Do you ignore it or throw some over your shoulder?",
@@ -297,7 +282,7 @@
           safe: "You threw salt over your shoulder.",
           riskyText: "You broke the ritual. The mistake stayed ordinary instead of becoming mystical.",
           safeText: "You completed the ritual. A small action turned accident into correction.",
-          level: "58%"
+          level: 58
         },
         {
           question: "You find an umbrella by the door on a rainy day. Do you open it inside to test it?",
@@ -305,7 +290,15 @@
           safe: "You waited until you were outside.",
           riskyText: "You challenged the taboo. The real danger may have been poking someone nearby.",
           safeText: "You obeyed the rule. Practical warnings often become supernatural over time.",
-          level: "49%"
+          level: 49
+        },
+        {
+          question: "A mirror cracks in your room with no clear reason. Do you laugh it off or search for meaning?",
+          risky: "You laughed it off.",
+          safe: "You searched for meaning.",
+          riskyText: "You refused the omen. But the cracked reflection still makes the moment feel strangely personal.",
+          safeText: "You treated the crack like a sign. Humans often turn sudden events into stories.",
+          level: 81
         }
       ];
 
@@ -317,13 +310,15 @@
       const responseText = document.getElementById("risk-response-text");
       const nextBtn = document.getElementById("next-omen-btn");
       const meterFill = document.getElementById("meter-fill");
+      const omenPercent = document.getElementById("omen-percent");
 
-      let current = 0;
+      let current = Math.floor(Math.random() * scenarios.length);
 
       function loadScenario() {
         const item = scenarios[current];
         question.textContent = item.question;
-        meterFill.style.width = item.level;
+        meterFill.style.width = item.level + "%";
+        omenPercent.textContent = item.level + "%";
         responseBox.classList.remove("show");
         riskyBtn.classList.remove("selected");
         safeBtn.classList.remove("selected");
@@ -332,7 +327,6 @@
       function choose(type) {
         const item = scenarios[current];
         responseBox.classList.add("show");
-
         riskyBtn.classList.remove("selected");
         safeBtn.classList.remove("selected");
 
@@ -356,13 +350,16 @@
       });
 
       nextBtn.addEventListener("click", function () {
-        current = (current + 1) % scenarios.length;
+        let next = Math.floor(Math.random() * scenarios.length);
+        while (next === current) {
+          next = Math.floor(Math.random() * scenarios.length);
+        }
+        current = next;
         loadScenario();
       });
 
       loadScenario();
     });
   </script>
-
 </body>
 </html>

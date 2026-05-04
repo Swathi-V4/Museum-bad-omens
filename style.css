@@ -109,6 +109,7 @@ section {
 
 .site-title {
   display: inline-block;
+  font-family: "Cormorant Garamond", serif;
   font-size: 3.3rem;
   line-height: 1;
   letter-spacing: 2px;
@@ -116,6 +117,7 @@ section {
   white-space: nowrap;
   color: #f3eadf;
   text-decoration: none;
+  text-transform: uppercase;
   transition: color 0.2s ease;
 }
 

@@ -67,13 +67,21 @@ body {
 }
 
 @keyframes driftFogOne {
-  from { transform: translate3d(-2%,0,0) scale(1); }
-  to { transform: translate3d(2%,-1.5%,0) scale(1.06); }
+  from {
+    transform: translate3d(-2%,0,0) scale(1);
+  }
+  to {
+    transform: translate3d(2%,-1.5%,0) scale(1.06);
+  }
 }
 
 @keyframes driftFogTwo {
-  from { transform: translate3d(2%,1%,0) scale(1); }
-  to { transform: translate3d(-2%,-1%,0) scale(1.05); }
+  from {
+    transform: translate3d(2%,1%,0) scale(1);
+  }
+  to {
+    transform: translate3d(-2%,-1%,0) scale(1.05);
+  }
 }
 
 section {
@@ -81,8 +89,14 @@ section {
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* TOP BAR */
@@ -102,6 +116,11 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
+}
+
+.brand-block {
+  flex-shrink: 0;
 }
 
 .brand-block h1 {
@@ -109,6 +128,7 @@ section {
   line-height: 1;
   letter-spacing: 2px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .eyebrow {
@@ -123,6 +143,8 @@ section {
 .main-nav {
   display: flex;
   gap: 30px;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .main-nav a {
@@ -133,6 +155,8 @@ section {
   letter-spacing: 1.6px;
   text-transform: uppercase;
   font-weight: 400;
+  white-space: nowrap;
+  opacity: 0.9;
 }
 
 .main-nav a:hover {
@@ -157,7 +181,8 @@ section {
 }
 
 .risk-test {
-  padding: 20px 28px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .gallery,
@@ -182,6 +207,10 @@ section {
 }
 
 /* HERO */
+.hero-inner {
+  max-width: 920px;
+}
+
 .hero-card {
   padding: 56px;
 }
@@ -222,6 +251,12 @@ section {
   font-family: "Inter", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.22);
 }
 
 .btn-primary {
@@ -232,6 +267,7 @@ section {
 .btn-secondary {
   border: 1px solid rgba(188,141,79,0.45);
   color: #f3eadf;
+  background: rgba(255,255,255,0.02);
 }
 
 /* CURSE GAME */
@@ -287,7 +323,7 @@ section {
   height: 100%;
   width: 50%;
   background: linear-gradient(90deg,#d8b27a,#b793e6);
-  transition: width 0.6s ease;
+  transition: width 0.6s ease, background 0.6s ease;
 }
 
 .curse-caption {
@@ -301,6 +337,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .risk-btn {
@@ -313,18 +350,79 @@ section {
   cursor: pointer;
   font-size: 0.95rem;
   font-weight: 600;
-  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
 }
 
 .risk-btn:hover,
 .risk-btn.selected {
   transform: translateY(-2px);
   background: linear-gradient(90deg, rgba(216,178,122,0.28), rgba(183,147,230,0.22));
+  box-shadow: 0 0 18px rgba(216,178,122,0.18);
 }
 
 .risk-btn:disabled {
   cursor: wait;
   opacity: 0.8;
+}
+
+/* CURSE ENDING */
+.curse-ending {
+  display: none;
+  margin: 28px auto 0;
+  max-width: 560px;
+  padding: 26px;
+  border-radius: 24px;
+  border: 1px solid rgba(216,178,122,0.45);
+  background:
+    radial-gradient(circle at top, rgba(122,31,61,0.35), transparent 55%),
+    rgba(18,6,30,0.88);
+  box-shadow: 0 0 34px rgba(122,31,61,0.35);
+  animation: claimedPulse 1.2s ease both;
+}
+
+.curse-ending.show {
+  display: block;
+}
+
+.curse-ending h3 {
+  font-size: 2rem;
+  color: #f6deaf;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.curse-ending p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e9decd;
+  margin-bottom: 18px;
+}
+
+.reset-curse-btn {
+  font-family: "Inter", sans-serif;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(216,178,122,0.6);
+  background: rgba(255,255,255,0.04);
+  color: #f3eadf;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.reset-curse-btn:hover {
+  background: rgba(216,178,122,0.16);
+  transform: translateY(-2px);
+}
+
+@keyframes claimedPulse {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* SECTION HEADINGS */
@@ -344,6 +442,12 @@ section {
   font-size: 1.14rem;
   line-height: 1.7;
   margin-bottom: 14px;
+  color: #e9decd;
+}
+
+.insight-box p:last-child,
+.process-box p:last-child {
+  margin-bottom: 0;
 }
 
 /* GALLERY */
@@ -375,7 +479,9 @@ section {
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   padding: 20px;
+  overflow: hidden;
 }
 
 .flip-card-front {
@@ -386,6 +492,7 @@ section {
 
 .flip-card-front h3 {
   font-size: 1.85rem;
+  line-height: 1.2;
 }
 
 .flip-card-back {
@@ -405,12 +512,20 @@ section {
   font-size: 1.06rem;
   line-height: 1.6;
   margin-bottom: 12px;
+  color: #e9decd;
 }
 
 .card-tag {
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   color: #f6deaf;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(218,184,122,0.25);
+  border-radius: 999px;
+  padding: 7px 10px;
+  align-self: flex-start;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .card-hint {
@@ -426,16 +541,40 @@ section {
   background-size: cover;
   background-position: center;
   border: 1px solid rgba(188,141,79,0.28);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.22);
 }
 
-.image-13 { background-image: url("images/number-13.png"); }
-.image-cat { background-image: url("images/black-cat.png"); }
-.image-nails { background-image: url("images/cutting-nails.png"); }
-.image-mirror { background-image: url("images/broken-mirror.png"); }
-.image-salt { background-image: url("images/spilled-salt.png"); }
-.image-ladder { background-image: url("images/ladder.png"); }
-.image-umbrella { background-image: url("images/umbrella-indoors.png"); }
-.image-eye { background-image: url("images/evil-eye.png"); }
+.image-13 {
+  background-image: url("images/number-13.png");
+}
+
+.image-cat {
+  background-image: url("images/black-cat.png");
+}
+
+.image-nails {
+  background-image: url("images/cutting-nails.png");
+}
+
+.image-mirror {
+  background-image: url("images/broken-mirror.png");
+}
+
+.image-salt {
+  background-image: url("images/spilled-salt.png");
+}
+
+.image-ladder {
+  background-image: url("images/ladder.png");
+}
+
+.image-umbrella {
+  background-image: url("images/umbrella-indoors.png");
+}
+
+.image-eye {
+  background-image: url("images/evil-eye.png");
+}
 
 .card-variant-1,
 .card-variant-2,
@@ -449,6 +588,20 @@ section {
 }
 
 /* RESPONSIVE */
+@media (max-width: 1100px) {
+  .brand-block h1 {
+    font-size: 2.8rem;
+  }
+
+  .main-nav {
+    gap: 22px;
+  }
+
+  .main-nav a {
+    font-size: 0.76rem;
+  }
+}
+
 @media (max-width: 980px) {
   .card-grid {
     grid-template-columns: 1fr;
@@ -468,9 +621,22 @@ section {
   .hero-card h2 {
     font-size: 3.2rem;
   }
+
+  .hero-text {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 640px) {
+  .hero,
+  .risk-test,
+  .gallery,
+  .insight,
+  .process {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
   .hero-card,
   .risk-inner {
     padding: 30px;
@@ -482,6 +648,7 @@ section {
 
   .brand-block h1 {
     font-size: 2.3rem;
+    white-space: normal;
   }
 
   .risk-inner h2,
@@ -506,5 +673,19 @@ section {
 
   .card-image {
     min-height: 220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fog-one,
+  .fog-two,
+  section,
+  .flip-card-inner,
+  .btn,
+  .risk-btn,
+  .meter-fill,
+  .curse-ending {
+    animation: none;
+    transition: none;
   }
 }

@@ -151,10 +151,23 @@ section {
   padding-right: 28px;
 }
 
-.hero { padding-top: 70px; padding-bottom: 20px; }
-.risk-test { padding: 20px 28px; }
-.gallery, .insight, .process { padding-top: 40px; padding-bottom: 20px; }
+.hero {
+  padding-top: 70px;
+  padding-bottom: 20px;
+}
 
+.risk-test {
+  padding: 20px 28px;
+}
+
+.gallery,
+.insight,
+.process {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+/* SHARED BOXES */
 .hero-card,
 .risk-inner,
 .insight-box,
@@ -237,6 +250,13 @@ section {
   line-height: 1.6;
   margin: 0 auto 24px;
   max-width: 850px;
+  min-height: 38px;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.fade-question {
+  opacity: 0;
+  transform: translateY(8px);
 }
 
 .curse-meter {
@@ -291,44 +311,20 @@ section {
   background: rgba(255,255,255,0.03);
   color: #f3eadf;
   cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
 }
 
 .risk-btn:hover,
 .risk-btn.selected {
+  transform: translateY(-2px);
   background: linear-gradient(90deg, rgba(216,178,122,0.28), rgba(183,147,230,0.22));
 }
 
-.risk-response {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.risk-response.show {
-  max-height: 260px;
-  opacity: 1;
-  margin-top: 24px;
-}
-
-.risk-response-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.risk-response-text {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.risk-link-btn {
-  font-family: "Inter", sans-serif;
-  background: transparent;
-  border: none;
-  color: #f6deaf;
-  border-bottom: 1px solid rgba(246,222,175,0.5);
-  cursor: pointer;
+.risk-btn:disabled {
+  cursor: wait;
+  opacity: 0.8;
 }
 
 /* SECTION HEADINGS */
@@ -461,6 +457,7 @@ section {
   .topbar-inner {
     flex-direction: column;
     gap: 12px;
+    text-align: center;
   }
 
   .main-nav {
@@ -470,5 +467,44 @@ section {
 
   .hero-card h2 {
     font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-card,
+  .risk-inner {
+    padding: 30px;
+  }
+
+  .hero-card h2 {
+    font-size: 2.5rem;
+  }
+
+  .brand-block h1 {
+    font-size: 2.3rem;
+  }
+
+  .risk-inner h2,
+  .section-heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .risk-options {
+    flex-direction: column;
+  }
+
+  .risk-btn,
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .flip-card,
+  .flip-card-inner {
+    min-height: 560px;
+  }
+
+  .card-image {
+    min-height: 220px;
   }
 }

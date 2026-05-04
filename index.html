@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cabinet of Omens</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
   <div class="page-background"></div>
   <div class="page-overlay"></div>
   <div class="fog-layer fog-one"></div>
@@ -33,6 +33,7 @@
   </header>
 
   <main>
+
     <section class="hero" id="concept">
       <div class="hero-inner">
         <div class="hero-card">
@@ -61,14 +62,17 @@
 
         <p class="risk-question" id="risk-question"></p>
 
-        <div class="omen-meter">
-          <div class="omen-meter-top">
-            <span>Omen Level</span>
-            <span id="omen-percent">0%</span>
+        <div class="curse-meter">
+          <div class="curse-meter-top">
+            <span>Curse Meter</span>
+            <span id="curse-percent">50%</span>
           </div>
+
           <div class="meter-track">
             <div class="meter-fill" id="meter-fill"></div>
           </div>
+
+          <p class="curse-caption" id="curse-caption">Your curse level is balanced... for now.</p>
         </div>
 
         <div class="risk-options">
@@ -76,7 +80,7 @@
           <button class="risk-btn" id="safe-btn" type="button">Play it safe</button>
         </div>
 
-        <div class="risk-response" id="risk-response" aria-live="polite">
+        <div class="risk-response" id="risk-response">
           <p class="risk-response-title" id="risk-response-title"></p>
           <p class="risk-response-text" id="risk-response-text"></p>
           <button class="risk-link-btn" id="next-omen-btn" type="button">Try another omen</button>
@@ -91,6 +95,7 @@
       </div>
 
       <div class="card-grid">
+
         <article class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front card-variant-1">
@@ -101,9 +106,9 @@
             </div>
             <div class="flip-card-back card-variant-1">
               <h3>The Number 13</h3>
-              <p><strong>History:</strong> Fear of 13, known as triskaidekaphobia, is often linked to Western religious and mythological traditions.</p>
-              <p><strong>Psychology:</strong> This reflects pattern-seeking behavior and the tendency to remember negative events more strongly.</p>
-              <p><strong>Why It Persists:</strong> The number is still avoided in buildings, hotels, and travel settings.</p>
+              <p><strong>History:</strong> Fear of 13 is linked to Western religious and mythological traditions where the number signals disorder.</p>
+              <p><strong>Psychology:</strong> Humans remember negative events more strongly when they confirm existing fear.</p>
+              <p><strong>Why It Persists:</strong> Buildings and hotels still skip the 13th floor, reinforcing the belief.</p>
             </div>
           </div>
         </article>
@@ -118,9 +123,9 @@
             </div>
             <div class="flip-card-back card-variant-2">
               <h3>Black Cats</h3>
-              <p><strong>History:</strong> In parts of medieval Europe, black cats became associated with witchcraft, night, and dark omens.</p>
-              <p><strong>Psychology:</strong> Social storytelling can attach fear to visual symbols.</p>
-              <p><strong>Why It Persists:</strong> Black cats remain recognizable in folklore and media.</p>
+              <p><strong>History:</strong> Black cats became associated with witchcraft and dark omens in medieval Europe.</p>
+              <p><strong>Psychology:</strong> Visual symbols become emotionally charged through repeated storytelling.</p>
+              <p><strong>Why It Persists:</strong> Media and folklore keep the symbol alive across generations.</p>
             </div>
           </div>
         </article>
@@ -135,9 +140,9 @@
             </div>
             <div class="flip-card-back card-variant-3">
               <h3>Cutting Nails at Night</h3>
-              <p><strong>History:</strong> In some Asian cultures, cutting nails after dark was believed to invite bad luck.</p>
-              <p><strong>Psychology:</strong> Practical warnings can become symbolic beliefs.</p>
-              <p><strong>Why It Persists:</strong> It blends daily routine with family tradition.</p>
+              <p><strong>History:</strong> Cutting nails after dark was once considered risky and tied to bad luck.</p>
+              <p><strong>Psychology:</strong> Practical household warnings slowly became supernatural beliefs.</p>
+              <p><strong>Why It Persists:</strong> It survives through family repetition and inherited caution.</p>
             </div>
           </div>
         </article>
@@ -152,9 +157,9 @@
             </div>
             <div class="flip-card-back card-variant-4">
               <h3>Breaking a Mirror</h3>
-              <p><strong>History:</strong> Mirrors were once viewed as spiritually significant objects connected to identity and the soul.</p>
-              <p><strong>Psychology:</strong> Humans project meaning onto personal objects.</p>
-              <p><strong>Why It Persists:</strong> A shattered mirror is dramatic and memorable.</p>
+              <p><strong>History:</strong> Mirrors were once seen as spiritually significant objects tied to identity and the soul.</p>
+              <p><strong>Psychology:</strong> People project meaning onto personal reflective objects.</p>
+              <p><strong>Why It Persists:</strong> A shattered mirror feels dramatic and symbolically personal.</p>
             </div>
           </div>
         </article>
@@ -169,9 +174,9 @@
             </div>
             <div class="flip-card-back card-variant-5">
               <h3>Spilling Salt</h3>
-              <p><strong>History:</strong> Salt was once expensive and symbolically valuable.</p>
-              <p><strong>Psychology:</strong> People give extra meaning to accidents involving important objects.</p>
-              <p><strong>Why It Persists:</strong> The ritual turns a mistake into correction.</p>
+              <p><strong>History:</strong> Salt was once expensive and symbolically valuable, so spilling it represented misfortune.</p>
+              <p><strong>Psychology:</strong> Accidents involving important objects gain extra meaning.</p>
+              <p><strong>Why It Persists:</strong> The ritual turns a mistake into a dramatic correction.</p>
             </div>
           </div>
         </article>
@@ -186,9 +191,9 @@
             </div>
             <div class="flip-card-back card-variant-6">
               <h3>Walking Under a Ladder</h3>
-              <p><strong>History:</strong> Ladders were linked to sacred triangular forms and dangerous spaces.</p>
-              <p><strong>Psychology:</strong> This belief combines symbolic danger with real physical risk.</p>
-              <p><strong>Why It Persists:</strong> It is reinforced by both storytelling and caution.</p>
+              <p><strong>History:</strong> Ladders were tied to sacred triangular forms and dangerous labor spaces.</p>
+              <p><strong>Psychology:</strong> Symbolic danger combines with real physical caution.</p>
+              <p><strong>Why It Persists:</strong> It is reinforced by both folklore and common sense.</p>
             </div>
           </div>
         </article>
@@ -203,9 +208,9 @@
             </div>
             <div class="flip-card-back card-variant-7">
               <h3>Opening an Umbrella Indoors</h3>
-              <p><strong>History:</strong> This belief may have come from concerns about damaging indoor spaces or hurting someone.</p>
-              <p><strong>Psychology:</strong> Everyday rules can become mystical when repeated without explanation.</p>
-              <p><strong>Why It Persists:</strong> It turns an ordinary object into something forbidden.</p>
+              <p><strong>History:</strong> This likely began as a practical household warning.</p>
+              <p><strong>Psychology:</strong> Repeated rules become mystical when detached from explanation.</p>
+              <p><strong>Why It Persists:</strong> It makes an ordinary object feel briefly forbidden.</p>
             </div>
           </div>
         </article>
@@ -221,11 +226,12 @@
             <div class="flip-card-back card-variant-8">
               <h3>The Evil Eye</h3>
               <p><strong>History:</strong> Envy and attention were believed to carry harmful force.</p>
-              <p><strong>Psychology:</strong> This reflects social anxiety about jealousy and being watched.</p>
-              <p><strong>Why It Persists:</strong> Protective charms keep the belief visible and emotional.</p>
+              <p><strong>Psychology:</strong> It reflects social anxiety about jealousy and being watched.</p>
+              <p><strong>Why It Persists:</strong> Protective charms keep the belief visible and emotionally real.</p>
             </div>
           </div>
         </article>
+
       </div>
     </section>
 
@@ -236,10 +242,9 @@
       </div>
 
       <div class="insight-box">
-        <p>Superstitions are often dismissed as irrational, but they reveal something deeper about human behavior. In moments of uncertainty, people naturally look for patterns, causes, and rituals that make the world feel more predictable.</p>
-        <p>These beliefs persist not because they are scientifically proven, but because they are emotionally persuasive. They can reduce anxiety, create a sense of control, and connect people to family traditions, folklore, and cultural memory.</p>
-        <p>To study superstition is to study the human mind itself: its fears, its habits, its stories, and its tendency to give meaning to randomness.</p>
-        <p>This also connects to ideas such as pattern recognition bias, confirmation bias, and the tendency to remember events that seem to confirm what we already fear.</p>
+        <p>Superstitions are often dismissed as irrational, but they reveal something deeper about human behavior. In moments of uncertainty, people naturally search for patterns, causes, and rituals that make the world feel more predictable.</p>
+        <p>These beliefs persist not because they are scientifically proven, but because they are emotionally persuasive. They reduce anxiety, create a sense of control, and connect people to folklore and family memory.</p>
+        <p>To study superstition is to study the human mind itself: its fears, habits, stories, and its urge to give meaning to randomness.</p>
       </div>
     </section>
 
@@ -250,11 +255,12 @@
       </div>
 
       <div class="process-box">
-        <p>This digital museum was designed as a focused exhibition using a Victorian fairy painting aesthetic: jewel tones, dark contrast, ornate framing, and an atmosphere of mystery.</p>
-        <p>Each artifact is presented like a museum object. The front introduces the superstition visually, while the reverse reveals historical and psychological context.</p>
+        <p>This digital museum was designed as a focused exhibition using a Victorian fairy painting aesthetic: jewel tones, dark contrast, ornate framing, and mystery.</p>
+        <p>Each artifact is presented like a museum object. The front introduces the superstition visually, while the reverse reveals historical and psychological meaning.</p>
         <p>The exhibit treats superstition not as random folklore but as evidence of how humans respond to fear, uncertainty, and the need for control.</p>
       </div>
     </section>
+
   </main>
 
   <script>
@@ -264,41 +270,37 @@
           question: "A ladder blocks your path on a quiet street. No one is watching. Do you walk under it?",
           risky: "You walked under the ladder.",
           safe: "You went around the ladder.",
-          riskyText: "Bold choice. You ignored the omen, but the superstition still worked on you for a second.",
-          safeText: "You chose caution. Sometimes superstition survives because avoiding it costs almost nothing.",
-          level: 72
+          riskyText: "The curse meter rises. You challenged an old warning.",
+          safeText: "The curse meter lowers. You avoided the omen.",
+          riskChange: 18,
+          safeChange: -12
         },
         {
           question: "A black cat crosses in front of you before an important day. Do you keep walking?",
           risky: "You kept walking.",
-          safe: "You paused and changed direction.",
-          riskyText: "You resisted the story attached to the symbol. Still, the cat probably made the moment feel charged.",
-          safeText: "You followed the old warning. Even tiny rituals can make uncertainty feel easier to control.",
-          level: 64
+          safe: "You changed direction.",
+          riskyText: "The curse meter rises. The symbol lingers.",
+          safeText: "The curse meter lowers. You followed the warning.",
+          riskChange: 14,
+          safeChange: -10
         },
         {
           question: "You spill salt across the table. Do you ignore it or throw some over your shoulder?",
           risky: "You ignored the salt.",
           safe: "You threw salt over your shoulder.",
-          riskyText: "You broke the ritual. The mistake stayed ordinary instead of becoming mystical.",
-          safeText: "You completed the ritual. A small action turned accident into correction.",
-          level: 58
+          riskyText: "The curse meter rises. The omen remains unresolved.",
+          safeText: "The curse meter lowers. Ritual creates correction.",
+          riskChange: 12,
+          safeChange: -14
         },
         {
-          question: "You find an umbrella by the door on a rainy day. Do you open it inside to test it?",
-          risky: "You opened it indoors.",
-          safe: "You waited until you were outside.",
-          riskyText: "You challenged the taboo. The real danger may have been poking someone nearby.",
-          safeText: "You obeyed the rule. Practical warnings often become supernatural over time.",
-          level: 49
-        },
-        {
-          question: "A mirror cracks in your room with no clear reason. Do you laugh it off or search for meaning?",
+          question: "A mirror cracks in your room. Do you laugh it off or treat it like a sign?",
           risky: "You laughed it off.",
-          safe: "You searched for meaning.",
-          riskyText: "You refused the omen. But the cracked reflection still makes the moment feel strangely personal.",
-          safeText: "You treated the crack like a sign. Humans often turn sudden events into stories.",
-          level: 81
+          safe: "You treated it like a sign.",
+          riskyText: "The curse meter rises sharply. Cracked reflections carry weight.",
+          safeText: "The curse meter lowers. Respecting the omen calms the fear.",
+          riskChange: 22,
+          safeChange: -16
         }
       ];
 
@@ -310,44 +312,58 @@
       const responseText = document.getElementById("risk-response-text");
       const nextBtn = document.getElementById("next-omen-btn");
       const meterFill = document.getElementById("meter-fill");
-      const omenPercent = document.getElementById("omen-percent");
+      const cursePercent = document.getElementById("curse-percent");
+      const curseCaption = document.getElementById("curse-caption");
 
       let current = Math.floor(Math.random() * scenarios.length);
+      let curseLevel = 50;
+
+      function updateMeter() {
+        meterFill.style.width = curseLevel + "%";
+        cursePercent.textContent = curseLevel + "%";
+
+        if (curseLevel <= 25) {
+          curseCaption.textContent = "You seem protected... for now.";
+        } else if (curseLevel <= 50) {
+          curseCaption.textContent = "Your curse level is balanced... for now.";
+        } else if (curseLevel <= 75) {
+          curseCaption.textContent = "The omens are gathering around you.";
+        } else {
+          curseCaption.textContent = "The curse is dangerously high.";
+        }
+      }
 
       function loadScenario() {
-        const item = scenarios[current];
-        question.textContent = item.question;
-        meterFill.style.width = item.level + "%";
-        omenPercent.textContent = item.level + "%";
+        question.textContent = scenarios[current].question;
         responseBox.classList.remove("show");
         riskyBtn.classList.remove("selected");
         safeBtn.classList.remove("selected");
+        updateMeter();
       }
 
       function choose(type) {
         const item = scenarios[current];
         responseBox.classList.add("show");
-        riskyBtn.classList.remove("selected");
-        safeBtn.classList.remove("selected");
 
         if (type === "risky") {
           riskyBtn.classList.add("selected");
+          safeBtn.classList.remove("selected");
+          curseLevel = Math.min(100, curseLevel + item.riskChange);
           responseTitle.textContent = item.risky;
           responseText.textContent = item.riskyText;
         } else {
           safeBtn.classList.add("selected");
+          riskyBtn.classList.remove("selected");
+          curseLevel = Math.max(0, curseLevel + item.safeChange);
           responseTitle.textContent = item.safe;
           responseText.textContent = item.safeText;
         }
+
+        updateMeter();
       }
 
-      riskyBtn.addEventListener("click", function () {
-        choose("risky");
-      });
-
-      safeBtn.addEventListener("click", function () {
-        choose("safe");
-      });
+      riskyBtn.addEventListener("click", () => choose("risky"));
+      safeBtn.addEventListener("click", () => choose("safe"));
 
       nextBtn.addEventListener("click", function () {
         let next = Math.floor(Math.random() * scenarios.length);
@@ -361,5 +377,6 @@
       loadScenario();
     });
   </script>
+
 </body>
 </html>

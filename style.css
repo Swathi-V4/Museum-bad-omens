@@ -35,9 +35,9 @@ body {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(9, 4, 18, 0.72) 0%, rgba(18, 9, 31, 0.88) 100%),
-    radial-gradient(circle at top center, rgba(94, 54, 145, 0.25), transparent 35%),
-    radial-gradient(circle at center, rgba(45, 18, 74, 0.20), transparent 55%);
+    linear-gradient(180deg, rgba(9,4,18,0.72) 0%, rgba(18,9,31,0.88) 100%),
+    radial-gradient(circle at top center, rgba(94,54,145,0.25), transparent 35%),
+    radial-gradient(circle at center, rgba(45,18,74,0.20), transparent 55%);
   z-index: -3;
 }
 
@@ -52,28 +52,28 @@ body {
 
 .fog-one {
   background:
-    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.12), transparent 22%),
-    radial-gradient(circle at 70% 40%, rgba(210, 210, 230, 0.10), transparent 24%),
-    radial-gradient(circle at 45% 78%, rgba(255, 255, 255, 0.08), transparent 20%);
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.12), transparent 22%),
+    radial-gradient(circle at 70% 40%, rgba(210,210,230,0.10), transparent 24%),
+    radial-gradient(circle at 45% 78%, rgba(255,255,255,0.08), transparent 20%);
   animation: driftFogOne 28s ease-in-out infinite alternate;
 }
 
 .fog-two {
   background:
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.10), transparent 22%),
-    radial-gradient(circle at 25% 72%, rgba(210, 210, 230, 0.08), transparent 22%),
-    radial-gradient(circle at 55% 55%, rgba(255, 255, 255, 0.06), transparent 18%);
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.10), transparent 22%),
+    radial-gradient(circle at 25% 72%, rgba(210,210,230,0.08), transparent 22%),
+    radial-gradient(circle at 55% 55%, rgba(255,255,255,0.06), transparent 18%);
   animation: driftFogTwo 34s ease-in-out infinite alternate;
 }
 
 @keyframes driftFogOne {
-  from { transform: translate3d(-2%, 0, 0) scale(1); }
-  to { transform: translate3d(2%, -1.5%, 0) scale(1.06); }
+  from { transform: translate3d(-2%,0,0) scale(1); }
+  to { transform: translate3d(2%,-1.5%,0) scale(1.06); }
 }
 
 @keyframes driftFogTwo {
-  from { transform: translate3d(2%, 1%, 0) scale(1); }
-  to { transform: translate3d(-2%, -1%, 0) scale(1.05); }
+  from { transform: translate3d(2%,1%,0) scale(1); }
+  to { transform: translate3d(-2%,-1%,0) scale(1.05); }
 }
 
 section {
@@ -87,8 +87,8 @@ section {
 
 /* TOP BAR */
 .topbar {
-  border-bottom: 1px solid rgba(188, 141, 79, 0.35);
-  background: rgba(10, 4, 20, 0.92);
+  border-bottom: 1px solid rgba(188,141,79,0.35);
+  background: rgba(10,4,20,0.92);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -102,19 +102,12 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
-}
-
-.brand-block {
-  flex-shrink: 0;
 }
 
 .brand-block h1 {
-  font-size: 3.4rem;
-  text-transform: uppercase;
+  font-size: 3.3rem;
   line-height: 1;
   letter-spacing: 2px;
-  white-space: nowrap;
   font-weight: 600;
 }
 
@@ -125,26 +118,21 @@ section {
   text-transform: uppercase;
   color: #d2a85e;
   margin-bottom: 6px;
-  font-weight: 500;
 }
 
 .main-nav {
   display: flex;
-  gap: 34px;
-  flex-wrap: nowrap;
-  align-items: center;
+  gap: 30px;
 }
 
 .main-nav a {
   font-family: "Inter", sans-serif;
   color: #f3eadf;
   text-decoration: none;
-  font-size: 0.86rem;
-  letter-spacing: 1.8px;
+  font-size: 0.82rem;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
   font-weight: 400;
-  white-space: nowrap;
-  opacity: 0.88;
 }
 
 .main-nav a:hover {
@@ -153,153 +141,111 @@ section {
 
 /* LAYOUT */
 .hero,
-.insight,
+.risk-test,
 .gallery,
-.process,
-.risk-test {
+.insight,
+.process {
   max-width: 1200px;
   margin: 0 auto;
   padding-left: 28px;
   padding-right: 28px;
 }
 
-.hero {
-  padding-top: 72px;
-  padding-bottom: 20px;
-}
+.hero { padding-top: 70px; padding-bottom: 20px; }
+.risk-test { padding: 20px 28px; }
+.gallery, .insight, .process { padding-top: 40px; padding-bottom: 20px; }
 
-.risk-test {
-  padding-top: 20px;
-  padding-bottom: 12px;
-}
-
-.insight,
-.gallery,
-.process {
-  padding-top: 40px;
-  padding-bottom: 20px;
-}
-
-/* CARDS / BOXES */
 .hero-card,
+.risk-inner,
 .insight-box,
 .process-box,
 .flip-card-front,
-.flip-card-back,
-.risk-inner {
-  border: 1px solid rgba(188, 141, 79, 0.45);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.30);
-}
-
-.hero-card,
-.insight-box,
-.process-box,
-.risk-inner {
-  border-radius: 34px;
+.flip-card-back {
+  border: 1px solid rgba(188,141,79,0.35);
+  border-radius: 30px;
+  background: rgba(29,13,50,0.70);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.30);
   backdrop-filter: blur(4px);
 }
 
-.hero-card,
-.risk-inner {
-  background: rgba(29, 13, 50, 0.6);
-}
-
-.insight-box,
-.process-box {
-  background: rgba(29, 13, 50, 0.80);
-}
-
 /* HERO */
-.hero-inner {
-  max-width: 920px;
-}
-
 .hero-card {
   padding: 56px;
-  max-width: 920px;
-  position: relative;
-  overflow: hidden;
 }
 
 .hero-card h2 {
-  font-size: 4.5rem;
+  font-size: 4.3rem;
   line-height: 0.98;
   text-transform: uppercase;
   margin-bottom: 24px;
-  font-weight: 700;
 }
 
 .hero-text {
-  font-size: 1.22rem;
+  font-size: 1.18rem;
   line-height: 1.7;
-  max-width: 92%;
   color: #e9decd;
+  max-width: 90%;
 }
 
 .hero-hook {
   margin-top: 18px;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: #d8b27a;
   font-style: italic;
-  max-width: 85%;
-  line-height: 1.6;
 }
 
 .hero-buttons {
+  margin-top: 28px;
   display: flex;
   gap: 16px;
-  margin-top: 28px;
   flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
-  padding: 16px 26px;
+  padding: 15px 25px;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 0.98rem;
-  font-weight: 600;
   font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, #d8b27a 0%, #b793e6 100%);
+  background: linear-gradient(90deg,#d8b27a,#b793e6);
   color: #1d1030;
 }
 
 .btn-secondary {
-  border: 1px solid rgba(188, 141, 79, 0.45);
+  border: 1px solid rgba(188,141,79,0.45);
   color: #f3eadf;
-  background: rgba(255, 255, 255, 0.02);
 }
 
-/* INTERACTIVE OMEN GAME */
+/* CURSE GAME */
 .risk-inner {
   padding: 44px;
   text-align: center;
 }
 
 .risk-inner h2 {
-  font-size: 2.9rem;
+  font-size: 2.8rem;
   margin-bottom: 16px;
-  font-weight: 600;
 }
 
 .risk-question {
-  font-size: 1.22rem;
+  font-size: 1.18rem;
   line-height: 1.6;
-  color: #e9decd;
   margin: 0 auto 24px;
   max-width: 850px;
 }
 
-.omen-meter {
+.curse-meter {
   max-width: 430px;
   margin: 0 auto 28px;
   font-family: "Inter", sans-serif;
 }
 
-.omen-meter-top {
+.curse-meter-top {
   display: flex;
   justify-content: space-between;
   color: #d8b27a;
@@ -312,98 +258,86 @@ section {
 .meter-track {
   height: 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.08);
   overflow: hidden;
-  border: 1px solid rgba(188, 141, 79, 0.25);
+  border: 1px solid rgba(188,141,79,0.25);
 }
 
 .meter-fill {
   height: 100%;
-  width: 0;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #d8b27a, #b793e6);
+  width: 50%;
+  background: linear-gradient(90deg,#d8b27a,#b793e6);
   transition: width 0.6s ease;
+}
+
+.curse-caption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #e2d2b7;
+  font-style: italic;
 }
 
 .risk-options {
   display: flex;
   justify-content: center;
   gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 4px;
 }
 
 .risk-btn {
   font-family: "Inter", sans-serif;
-  padding: 14px 26px;
+  padding: 14px 24px;
   border-radius: 999px;
-  border: 1px solid rgba(188, 141, 79, 0.45);
-  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(188,141,79,0.45);
+  background: rgba(255,255,255,0.03);
   color: #f3eadf;
   cursor: pointer;
-  font-size: 0.95rem;
-  font-weight: 600;
 }
 
 .risk-btn:hover,
 .risk-btn.selected {
-  transform: translateY(-2px);
-  background: linear-gradient(90deg, rgba(216, 178, 122, 0.28), rgba(183, 147, 230, 0.22));
-  border-color: rgba(216, 178, 122, 0.75);
-  box-shadow: 0 0 18px rgba(216, 178, 122, 0.22);
+  background: linear-gradient(90deg, rgba(216,178,122,0.28), rgba(183,147,230,0.22));
 }
 
 .risk-response {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transform: translateY(8px);
-  transition: max-height 0.45s ease, opacity 0.35s ease, transform 0.35s ease, margin-top 0.35s ease;
+  transition: all 0.4s ease;
 }
 
 .risk-response.show {
   max-height: 260px;
   opacity: 1;
-  transform: translateY(0);
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .risk-response-title {
-  font-size: 1.55rem;
-  font-weight: 600;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 .risk-response-text {
-  font-size: 1.08rem;
-  line-height: 1.65;
-  color: #e9decd;
-  max-width: 720px;
-  margin: 0 auto 18px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
 }
 
 .risk-link-btn {
   font-family: "Inter", sans-serif;
-  border: none;
   background: transparent;
+  border: none;
   color: #f6deaf;
-  border-bottom: 1px solid rgba(246, 222, 175, 0.5);
-  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(246,222,175,0.5);
   cursor: pointer;
-  font-size: 0.95rem;
 }
 
-.risk-link-btn:hover {
-  color: white;
-}
-
-/* HEADINGS / TEXT BOXES */
+/* SECTION HEADINGS */
 .section-heading h2 {
   font-size: 3rem;
   margin-bottom: 24px;
-  font-weight: 600;
 }
 
+/* INFO BOXES */
 .insight-box,
 .process-box {
   padding: 28px;
@@ -411,21 +345,19 @@ section {
 
 .insight-box p,
 .process-box p {
-  font-size: 1.16rem;
+  font-size: 1.14rem;
   line-height: 1.7;
   margin-bottom: 14px;
-  color: #e9decd;
 }
 
 /* GALLERY */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2,1fr);
   gap: 28px;
 }
 
 .flip-card {
-  background: transparent;
   perspective: 1200px;
   min-height: 520px;
 }
@@ -433,7 +365,6 @@ section {
 .flip-card-inner {
   position: relative;
   width: 100%;
-  height: 100%;
   min-height: 520px;
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
@@ -447,29 +378,26 @@ section {
 .flip-card-back {
   position: absolute;
   inset: 0;
-  border-radius: 28px;
   backface-visibility: hidden;
-  overflow: hidden;
+  padding: 20px;
 }
 
 .flip-card-front {
   display: flex;
   flex-direction: column;
-  padding: 20px;
   gap: 12px;
 }
 
 .flip-card-front h3 {
-  font-size: 1.9rem;
-  line-height: 1.2;
+  font-size: 1.85rem;
 }
 
 .flip-card-back {
   transform: rotateY(180deg);
-  padding: 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 28px;
 }
 
 .flip-card-back h3 {
@@ -478,41 +406,30 @@ section {
 }
 
 .flip-card-back p {
-  font-size: 1.08rem;
-  line-height: 1.65;
+  font-size: 1.06rem;
+  line-height: 1.6;
   margin-bottom: 12px;
-  color: #e9decd;
 }
 
 .card-tag {
   font-family: "Inter", sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 0.8rem;
   color: #f6deaf;
-  background: rgba(0, 0, 0, 0.28);
-  border: 1px solid rgba(218, 184, 122, 0.28);
-  padding: 7px 10px;
-  border-radius: 999px;
-  align-self: flex-start;
 }
 
 .card-hint {
-  opacity: 0.65;
-  font-size: 0.92rem;
-  font-style: italic;
   margin-top: auto;
-  color: #e2d2b7;
+  font-style: italic;
+  opacity: 0.7;
 }
 
 .card-image {
   width: 100%;
   min-height: 300px;
   border-radius: 20px;
-  border: 1px solid rgba(188, 141, 79, 0.28);
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  border: 1px solid rgba(188,141,79,0.28);
 }
 
 .image-13 { background-image: url("images/number-13.png"); }
@@ -532,7 +449,7 @@ section {
 .card-variant-6,
 .card-variant-7,
 .card-variant-8 {
-  background: linear-gradient(135deg, rgba(42, 20, 63, 0.95), rgba(18, 9, 31, 0.97));
+  background: linear-gradient(135deg, rgba(42,20,63,0.95), rgba(18,9,31,0.97));
 }
 
 /* RESPONSIVE */
@@ -543,12 +460,7 @@ section {
 
   .topbar-inner {
     flex-direction: column;
-    text-align: center;
-  }
-
-  .brand-block h1 {
-    font-size: 2.6rem;
-    white-space: normal;
+    gap: 12px;
   }
 
   .main-nav {
@@ -557,41 +469,6 @@ section {
   }
 
   .hero-card h2 {
-    font-size: 3.4rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-card,
-  .risk-inner {
-    padding: 30px;
-  }
-
-  .hero-card h2 {
-    font-size: 2.5rem;
-  }
-
-  .brand-block h1 {
-    font-size: 2.3rem;
-  }
-
-  .risk-inner h2,
-  .section-heading h2 {
-    font-size: 2.2rem;
-  }
-
-  .btn,
-  .risk-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .flip-card,
-  .flip-card-inner {
-    min-height: 560px;
-  }
-
-  .card-image {
-    min-height: 220px;
+    font-size: 3.2rem;
   }
 }

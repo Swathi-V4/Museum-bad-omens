@@ -17,7 +17,6 @@ body {
   overflow-x: hidden;
 }
 
-/* BACKGROUND */
 .page-background {
   position: fixed;
   inset: 0;
@@ -67,21 +66,13 @@ body {
 }
 
 @keyframes driftFogOne {
-  from {
-    transform: translate3d(-2%,0,0) scale(1);
-  }
-  to {
-    transform: translate3d(2%,-1.5%,0) scale(1.06);
-  }
+  from { transform: translate3d(-2%,0,0) scale(1); }
+  to { transform: translate3d(2%,-1.5%,0) scale(1.06); }
 }
 
 @keyframes driftFogTwo {
-  from {
-    transform: translate3d(2%,1%,0) scale(1);
-  }
-  to {
-    transform: translate3d(-2%,-1%,0) scale(1.05);
-  }
+  from { transform: translate3d(2%,1%,0) scale(1); }
+  to { transform: translate3d(-2%,-1%,0) scale(1.05); }
 }
 
 section {
@@ -89,17 +80,10 @@ section {
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* TOP BAR */
 .topbar {
   border-bottom: 1px solid rgba(188,141,79,0.35);
   background: rgba(10,4,20,0.92);
@@ -163,7 +147,6 @@ section {
   color: #d2a85e;
 }
 
-/* LAYOUT */
 .hero,
 .risk-test,
 .gallery,
@@ -192,7 +175,6 @@ section {
   padding-bottom: 20px;
 }
 
-/* SHARED BOXES */
 .hero-card,
 .risk-inner,
 .insight-box,
@@ -206,33 +188,31 @@ section {
   backdrop-filter: blur(4px);
 }
 
-/* HERO */
 .hero-inner {
-  max-width: 920px;
+  max-width: 1120px;
 }
 
 .hero-card {
-  padding: 56px;
-  position: relative;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 42px;
+  align-items: center;
   overflow: hidden;
 }
 
 .hero-card h2 {
-  font-size: 4.3rem;
+  font-size: 4rem;
   line-height: 0.98;
   text-transform: uppercase;
   margin-bottom: 24px;
-  position: relative;
-  z-index: 2;
 }
 
 .hero-text {
   font-size: 1.18rem;
   line-height: 1.7;
   color: #e9decd;
-  max-width: 90%;
-  position: relative;
-  z-index: 2;
+  max-width: 95%;
 }
 
 .hero-hook {
@@ -240,36 +220,6 @@ section {
   font-size: 1.15rem;
   color: #d8b27a;
   font-style: italic;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-symbols {
-  position: absolute;
-  right: 46px;
-  bottom: 84px;
-  text-align: center;
-  font-size: 1.12rem;
-  line-height: 1.8;
-  color: rgba(216,178,122,0.17);
-  letter-spacing: 3px;
-  font-family: "Inter", sans-serif;
-  text-transform: uppercase;
-  pointer-events: none;
-  animation: floatSymbols 6s ease-in-out infinite alternate;
-  z-index: 1;
-}
-
-@keyframes floatSymbols {
-  from {
-    transform: translateY(0);
-    opacity: 0.14;
-  }
-
-  to {
-    transform: translateY(-8px);
-    opacity: 0.24;
-  }
 }
 
 .hero-buttons {
@@ -277,8 +227,25 @@ section {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
+}
+
+.hero-side-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-side-image img {
+  width: 100%;
+  max-width: 330px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 26px;
+  border: 1px solid rgba(188,141,79,0.45);
+  box-shadow:
+    0 20px 42px rgba(0,0,0,0.38),
+    inset 0 0 0 1px rgba(255,255,255,0.08);
+  opacity: 0.95;
 }
 
 .btn {
@@ -308,7 +275,6 @@ section {
   background: rgba(255,255,255,0.02);
 }
 
-/* CURSE GAME */
 .risk-inner {
   padding: 44px;
   text-align: center;
@@ -403,7 +369,6 @@ section {
   opacity: 0.8;
 }
 
-/* CURSE ENDING */
 .curse-ending {
   display: none;
   margin: 28px auto 0;
@@ -453,24 +418,15 @@ section {
 }
 
 @keyframes claimedPulse {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-/* SECTION HEADINGS */
 .section-heading h2 {
   font-size: 3rem;
   margin-bottom: 24px;
 }
 
-/* INFO BOXES */
 .insight-box,
 .process-box {
   padding: 28px;
@@ -489,7 +445,6 @@ section {
   margin-bottom: 0;
 }
 
-/* GALLERY */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2,1fr);
@@ -583,37 +538,14 @@ section {
   box-shadow: 0 12px 24px rgba(0,0,0,0.22);
 }
 
-.image-13 {
-  background-image: url("images/number-13.png");
-}
-
-.image-cat {
-  background-image: url("images/black-cat.png");
-}
-
-.image-nails {
-  background-image: url("images/cutting-nails.png");
-}
-
-.image-mirror {
-  background-image: url("images/broken-mirror.png");
-}
-
-.image-salt {
-  background-image: url("images/spilled-salt.png");
-}
-
-.image-ladder {
-  background-image: url("images/ladder.png");
-}
-
-.image-umbrella {
-  background-image: url("images/umbrella-indoors.png");
-}
-
-.image-eye {
-  background-image: url("images/evil-eye.png");
-}
+.image-13 { background-image: url("images/number-13.png"); }
+.image-cat { background-image: url("images/black-cat.png"); }
+.image-nails { background-image: url("images/cutting-nails.png"); }
+.image-mirror { background-image: url("images/broken-mirror.png"); }
+.image-salt { background-image: url("images/spilled-salt.png"); }
+.image-ladder { background-image: url("images/ladder.png"); }
+.image-umbrella { background-image: url("images/umbrella-indoors.png"); }
+.image-eye { background-image: url("images/evil-eye.png"); }
 
 .card-variant-1,
 .card-variant-2,
@@ -626,7 +558,6 @@ section {
   background: linear-gradient(135deg, rgba(42,20,63,0.95), rgba(18,9,31,0.97));
 }
 
-/* RESPONSIVE */
 @media (max-width: 1100px) {
   .brand-block h1 {
     font-size: 2.8rem;
@@ -640,10 +571,13 @@ section {
     font-size: 0.76rem;
   }
 
-  .hero-symbols {
-    right: 34px;
-    bottom: 78px;
-    font-size: 0.95rem;
+  .hero-card {
+    grid-template-columns: 1fr 0.7fr;
+    gap: 30px;
+  }
+
+  .hero-card h2 {
+    font-size: 3.4rem;
   }
 }
 
@@ -663,16 +597,20 @@ section {
     justify-content: center;
   }
 
-  .hero-card h2 {
-    font-size: 3.2rem;
+  .hero-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-side-image {
+    order: -1;
+  }
+
+  .hero-side-image img {
+    max-width: 260px;
   }
 
   .hero-text {
     max-width: 100%;
-  }
-
-  .hero-symbols {
-    display: none;
   }
 }
 
@@ -692,7 +630,7 @@ section {
   }
 
   .hero-card h2 {
-    font-size: 2.5rem;
+    font-size: 2.45rem;
   }
 
   .brand-block h1 {
@@ -722,20 +660,5 @@ section {
 
   .card-image {
     min-height: 220px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .fog-one,
-  .fog-two,
-  section,
-  .flip-card-inner,
-  .btn,
-  .risk-btn,
-  .meter-fill,
-  .curse-ending,
-  .hero-symbols {
-    animation: none;
-    transition: none;
   }
 }

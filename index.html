@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
   <div class="page-background"></div>
   <div class="page-overlay"></div>
   <div class="fog-layer fog-one"></div>
@@ -33,7 +33,6 @@
   </header>
 
   <main>
-
     <section class="hero" id="concept">
       <div class="hero-inner">
         <div class="hero-card">
@@ -78,12 +77,6 @@
         <div class="risk-options">
           <button class="risk-btn" id="risky-btn" type="button">Risk it</button>
           <button class="risk-btn" id="safe-btn" type="button">Play it safe</button>
-        </div>
-
-        <div class="risk-response" id="risk-response">
-          <p class="risk-response-title" id="risk-response-title"></p>
-          <p class="risk-response-text" id="risk-response-text"></p>
-          <button class="risk-link-btn" id="next-omen-btn" type="button">Try another omen</button>
         </div>
       </div>
     </section>
@@ -260,7 +253,6 @@
         <p>The exhibit treats superstition not as random folklore but as evidence of how humans respond to fear, uncertainty, and the need for control.</p>
       </div>
     </section>
-
   </main>
 
   <script>
@@ -268,49 +260,39 @@
       const scenarios = [
         {
           question: "A ladder blocks your path on a quiet street. No one is watching. Do you walk under it?",
-          risky: "You walked under the ladder.",
-          safe: "You went around the ladder.",
-          riskyText: "The curse meter rises. You challenged an old warning.",
-          safeText: "The curse meter lowers. You avoided the omen.",
           riskChange: 18,
           safeChange: -12
         },
         {
           question: "A black cat crosses in front of you before an important day. Do you keep walking?",
-          risky: "You kept walking.",
-          safe: "You changed direction.",
-          riskyText: "The curse meter rises. The symbol lingers.",
-          safeText: "The curse meter lowers. You followed the warning.",
           riskChange: 14,
           safeChange: -10
         },
         {
-          question: "You spill salt across the table. Do you ignore it or throw some over your shoulder?",
-          risky: "You ignored the salt.",
-          safe: "You threw salt over your shoulder.",
-          riskyText: "The curse meter rises. The omen remains unresolved.",
-          safeText: "The curse meter lowers. Ritual creates correction.",
+          question: "You spill salt across the table. Do you ignore it?",
           riskChange: 12,
           safeChange: -14
         },
         {
-          question: "A mirror cracks in your room. Do you laugh it off or treat it like a sign?",
-          risky: "You laughed it off.",
-          safe: "You treated it like a sign.",
-          riskyText: "The curse meter rises sharply. Cracked reflections carry weight.",
-          safeText: "The curse meter lowers. Respecting the omen calms the fear.",
+          question: "A mirror cracks in your room. Do you laugh it off?",
           riskChange: 22,
           safeChange: -16
+        },
+        {
+          question: "You find an umbrella by the door. Do you open it inside?",
+          riskChange: 10,
+          safeChange: -8
+        },
+        {
+          question: "Someone gives you an evil eye charm. Do you wear it?",
+          riskChange: -10,
+          safeChange: 8
         }
       ];
 
       const question = document.getElementById("risk-question");
       const riskyBtn = document.getElementById("risky-btn");
       const safeBtn = document.getElementById("safe-btn");
-      const responseBox = document.getElementById("risk-response");
-      const responseTitle = document.getElementById("risk-response-title");
-      const responseText = document.getElementById("risk-response-text");
-      const nextBtn = document.getElementById("next-omen-btn");
       const meterFill = document.getElementById("meter-fill");
       const cursePercent = document.getElementById("curse-percent");
       const curseCaption = document.getElementById("curse-caption");
@@ -334,49 +316,61 @@
       }
 
       function loadScenario() {
-        question.textContent = scenarios[current].question;
-        responseBox.classList.remove("show");
-        riskyBtn.classList.remove("selected");
-        safeBtn.classList.remove("selected");
-        updateMeter();
+        question.classList.add("fade-question");
+
+        setTimeout(function () {
+          question.textContent = scenarios[current].question;
+          question.classList.remove("fade-question");
+          riskyBtn.classList.remove("selected");
+          safeBtn.classList.remove("selected");
+        }, 180);
+      }
+
+      function nextScenario() {
+        let next = Math.floor(Math.random() * scenarios.length);
+
+        while (next === current) {
+          next = Math.floor(Math.random() * scenarios.length);
+        }
+
+        current = next;
+        loadScenario();
       }
 
       function choose(type) {
         const item = scenarios[current];
-        responseBox.classList.add("show");
+
+        riskyBtn.disabled = true;
+        safeBtn.disabled = true;
 
         if (type === "risky") {
           riskyBtn.classList.add("selected");
-          safeBtn.classList.remove("selected");
-          curseLevel = Math.min(100, curseLevel + item.riskChange);
-          responseTitle.textContent = item.risky;
-          responseText.textContent = item.riskyText;
+          curseLevel = Math.min(100, Math.max(0, curseLevel + item.riskChange));
         } else {
           safeBtn.classList.add("selected");
-          riskyBtn.classList.remove("selected");
-          curseLevel = Math.max(0, curseLevel + item.safeChange);
-          responseTitle.textContent = item.safe;
-          responseText.textContent = item.safeText;
+          curseLevel = Math.min(100, Math.max(0, curseLevel + item.safeChange));
         }
 
         updateMeter();
+
+        setTimeout(function () {
+          nextScenario();
+          riskyBtn.disabled = false;
+          safeBtn.disabled = false;
+        }, 650);
       }
 
-      riskyBtn.addEventListener("click", () => choose("risky"));
-      safeBtn.addEventListener("click", () => choose("safe"));
-
-      nextBtn.addEventListener("click", function () {
-        let next = Math.floor(Math.random() * scenarios.length);
-        while (next === current) {
-          next = Math.floor(Math.random() * scenarios.length);
-        }
-        current = next;
-        loadScenario();
+      riskyBtn.addEventListener("click", function () {
+        choose("risky");
       });
 
-      loadScenario();
+      safeBtn.addEventListener("click", function () {
+        choose("safe");
+      });
+
+      updateMeter();
+      question.textContent = scenarios[current].question;
     });
   </script>
-
 </body>
 </html>

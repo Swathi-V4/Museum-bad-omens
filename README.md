@@ -56,11 +56,6 @@ The strongest parts of the site are:
 - strong visual atmosphere
 - a balance of folklore and psychology
 
-Suggested next improvements:
-- replace placeholder visuals with properly sourced images
-- add captions and source credits
-- add a bibliography or references page
-- add one more superstition from a non-Western context for broader cultural range
 
 ## Files
 - `index.html` — main museum site

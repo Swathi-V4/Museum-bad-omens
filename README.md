@@ -2,7 +2,7 @@
 
 # Cabinet of Omens
 
-https://swathi-v4.github.io/Museum-bad-omens/#gallery
+https://swathi-v4.github.io/Museum-bad-omens/#insight
 
 A digital museum website about bad-luck superstitions across cultures.
 
